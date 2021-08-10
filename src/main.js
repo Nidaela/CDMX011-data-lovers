@@ -10,7 +10,7 @@ data.films.forEach(eachfilm => {
 
 function myHTML (movie) {
     let html = `
-    <image src "${movie.poster}" height = "200px"; width = "150px";/>
+    <img = src "${movie.poster}" height = "200px" width = "150px"/>
     <p>${movie.title}/<p>
     `
     return html
