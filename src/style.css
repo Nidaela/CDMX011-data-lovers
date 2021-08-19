@@ -1,0 +1,160 @@
+body {
+    background-color: #385B7C;
+    margin: 0;
+    padding: 0;
+    font-family: 'Alata', sans-serif;
+  }
+
+h1 {
+    font-family: 'Alata', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    fill: solid;
+    color: #FFFFFF;
+    line-height: 86px;
+    line-height: 70%;
+    text-align: center;
+    vertical-align: top;
+    margin-top: 60px;
+}  
+
+.responsive {
+    background-position: center;
+    width: 100%;
+    height: 440px;
+    object-position: center 25%;
+    object-fit: cover;
+    margin-top: 55px;
+  }
+
+p {
+    font-family: 'Alata', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    line-height: 300px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: -80px;
+}
+
+#root{ 
+  display: flex;
+  flex-wrap: wrap;
+  gap: 22rem;
+  max-width: 1380px;
+  margin-top: 250px;
+  margin-bottom: 400px;
+  margin-left: 15px;
+  margin-right: 15px;
+  justify-content: center;
+  align-content: space-around;
+  row-gap: 570px;
+}
+
+.movie-card{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 0 0 25%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  height: 480px;
+  background: rgb(51, 75, 105);
+  overflow: hidden;
+  box-shadow: 0 5px 10px rgba(0, -0, -0, -0.5);
+  box-sizing: border-box;
+  margin: 2rem 2rem;
+}
+
+.movie-card .poster {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card .poster:before {
+  content: "";
+  position: absolute;
+  bottom: -190px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(0deg, rgb(51, 75, 105) 30%, transparent);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.movie-card:hover .poster::before{
+  bottom: 0;
+}
+
+.movie-card .poster img{
+  height: 320px;
+  width: 100%;
+  transition: 0.5s;
+}
+
+.movie-card:hover .poster img{
+  filter: blur(3px);
+  transform: translateY(-50px);
+}
+
+.details{
+  position: absolute;
+  padding: 20px;
+  width: 100%;
+  height: 88%;
+  bottom: -255px;
+  left: 0;
+  box-sizing: border-box ;
+  transition: 0.8s;
+  z-index: 2;
+}
+
+.movie-card:hover .details{
+  bottom: 0;
+}
+
+.details h2{
+  font-weight: 500;
+  color: #b8dff3;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.details h2 span{
+  font-size: 15px;
+  color: #FFFFFF;
+}
+
+.tag{
+  position:absolute;
+  margin-top: 68px;
+}
+
+.tag span{
+  padding: 1.5px 20px;
+  margin-right: 2px;
+}
+
+.tag span.rating{
+  background:#b8dff3;
+  border-radius: 10px;
+  font-size: 0.93rem;
+  color: #2e2e2d;
+}
+
+.info{
+  color: #FFFFFF;
+}
+
+.info p{
+  margin: 15px, 0 10px;
+  padding-top: 196px;
+  font-size: 0.9rem;
+  text-align: left;
+  line-height: normal;
+}
