@@ -6,11 +6,15 @@ const myDOM = document.getElementById('root');
 const elOrdenado = document.getElementById('orderBy'); // aqui  accedemos al nodo select del archivo index.html
 
 function render(films) {
-    let html = ''
+    // let html = ''
+    myDOM.innerHTML = '';
     films.forEach(eachfilm => {
-        html += myHTML(eachfilm);    
+        // html += myHTML(eachfilm); 
+        // myDOM.innerHTML = ''   
+        let myDIV = document.createElement("new-div");
+        myDIV.innerHTML = myHTML(eachfilm);
+        myDOM.appendChild(myDIV)
     })
-    myDOM.innerHTML = html
 }
 
 elOrdenado.addEventListener('change', function (e){ // añadimos un evento al select donde establecemos una funcion anonima que ejecuta de inmedito al hacer un cambio en el nodo del select
@@ -23,18 +27,16 @@ render(data.films)
 
 function myHTML (movie) {
     let html = `
-    <div class= "container">
-       <div class= "movie-card">
-           <div class= "poster"> <img src= "${movie.poster}" height = "200px" width = "150px" style="width:100%"> </div>
-           <div class= "details"> 
-           <h2>${movie.title} (${movie.release_date}) <br> <span>Directed by ${movie.director}</span> <br> <span>Produced by ${movie.producer}</span></h2>
-           <div class= "tag">  
-           <span class= "rating">Rating: ${movie.rt_score}</span>
-           </div>
-           <div class= "info">  
-           <p>${movie.description}</p>
-           </div>
-       </div>
+    <div class= "movie-card">
+        <div class= "poster"> <img src= "${movie.poster}" height = "200px" width = "150px" style="width:100%"> </div>
+        <div class= "details"> 
+        <h2>${movie.title} (${movie.release_date}) <br> <span>Directed by ${movie.director}</span> <br> <span>Produced by ${movie.producer}</span></h2>
+        <div class= "tag">  
+        <span class= "rating">Rating: ${movie.rt_score}</span>
+        </div>
+        <div class= "info">  
+        <p>${movie.description}</p>
+        </div>
     </div>
     `
     return html

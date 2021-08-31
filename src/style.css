@@ -53,19 +53,10 @@ p {
   row-gap: 570px;
 }
 
-.container{
+.movie-card{
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  position: absolute;
-}
-
-.movie-card{
-  /* display: flex; */
-/*   flex-direction: column;
-  flex-wrap: wrap;
-  flex: 0 0 25%;
-  position: absolute; */
   flex: 0 0 25%;
   position: absolute;
   transform: translate(-50%, -50%);
