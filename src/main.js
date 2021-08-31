@@ -1,12 +1,29 @@
+// Es el punto de salida del dom
 import data from './data/ghibli/ghibli.js';
+import {ordenado} from './data.js';
 
 const myDOM = document.getElementById('root');
+const elOrdenado = document.getElementById('orderBy'); // aqui  accedemos al nodo select del archivo index.html
 
-data.films.forEach(eachfilm => {
-    const div = document.createElement("div")
-    div.innerHTML = myHTML(eachfilm);
-    myDOM.appendChild(div);
+function render(films) {
+    // let html = ''
+    myDOM.innerHTML = '';
+    films.forEach(eachfilm => {
+        // html += myHTML(eachfilm); 
+        // myDOM.innerHTML = ''   
+        let myDIV = document.createElement("new-div");
+        myDIV.innerHTML = myHTML(eachfilm);
+        myDOM.appendChild(myDIV)
+    })
+}
+
+elOrdenado.addEventListener('change', function (e){ // añadimos un evento al select donde establecemos una funcion anonima que ejecuta de inmedito al hacer un cambio en el nodo del select
+    let dataOrdenada=ordenado(data.films, e.target.value); //creamos una variable que ejecuta unafuncion llamada ordenado que envia dos parametros, el primero es ladata y el segundo es el tipo de ordenado mediate e.target.value accedemos al valor
+    console.log(dataOrdenada) //¿que hacemos con la data ordenada :D ? R= Imprimirla :D OMG
+    render(dataOrdenada)
 })
+
+render(data.films)
 
 function myHTML (movie) {
     let html = `

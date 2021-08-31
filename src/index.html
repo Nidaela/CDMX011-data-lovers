@@ -27,20 +27,26 @@
       <p>All Ghibli films:</p>  
       </div>
 
-      <div class="sorting">
+      <div class="sort-films">
         <p>Sort by:</p>
       </div>
 
       <main>
-        <section class="sort-options"> 
-          <button class="sort-first-to-last">FIRST TO LAST RELEASE</button>
-          <button class="sort-last-to-first">LAST TO FIRST RELEASE</button>
-        </section>
+        <!-- Creamos un select para las posibilidades del ordenado -->
+        
+        <select class="sort-options" id="orderBy"> 
+          <option class="sort-elements" value="" selected disabled hidden>Select options below</option>
+          <option class="first-to-last" value="first">First release - Last release</option>
+          <option class="last-to-first" value="last">Last release - First release</option>
+          <option class="sort-a-to-z" value="primero">A-Z</option> <!-- Asignamos un valor  a cada option en este caso es ultimo y primero el valor -->
+          <option class="sort-z-to-a" value="ultimo">Z-A</option>
+        </select>
       </main>
 
-      <div id="root"></div>
+      <div id="root"> 
+        <div id= "new-div"></div>
+      </div>
 
       <script src="main.js" type="module"></script>
-      <script src="sort.js" type="module"></script>
   </body>
 </html>
